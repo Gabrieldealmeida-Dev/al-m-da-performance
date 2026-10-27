@@ -106,7 +106,7 @@ function Hero() {
           </span>
         </Reveal>
 
-        <Reveal threshold={0} as="h1" className="display text-[15.5vw] md:text-[10.4vw]" style={{ translate: "0 calc(var(--p,0) * -30%)" }}>
+        <Reveal threshold={0} as="h1" className="display text-[13.5vw] md:text-[10.4vw]" style={{ translate: "0 calc(var(--p,0) * -30%)" }}>
           <Lines
             start={250}
             step={110}
