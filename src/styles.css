@@ -127,7 +127,7 @@
 }
 
 /* Reveal: line/word mask */
-.reveal-line { display: block; overflow: hidden; padding-bottom: 0.04em; }
+.reveal-line { display: block; overflow: hidden; padding-top: 0.12em; margin-top: -0.12em; padding-bottom: 0.04em; }
 .reveal-line > span {
   display: inline-block;
   transform: translateY(105%);

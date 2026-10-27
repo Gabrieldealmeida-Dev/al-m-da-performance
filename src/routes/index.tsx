@@ -106,7 +106,7 @@ function Hero() {
           </span>
         </Reveal>
 
-        <Reveal threshold={0} as="h1" className="display text-[19vw] md:text-[10.4vw]" style={{ translate: "0 calc(var(--p,0) * -30%)" }}>
+        <Reveal threshold={0} as="h1" className="display text-[15.5vw] md:text-[10.4vw]" style={{ translate: "0 calc(var(--p,0) * -30%)" }}>
           <Lines
             start={250}
             step={110}
@@ -138,7 +138,7 @@ function Hero() {
       <div className="absolute right-5 top-28 h-24 w-24 md:right-10 md:top-auto md:bottom-44 md:h-32 md:w-32">
         <svg viewBox="0 0 100 100" className="spin-slow h-full w-full">
           <defs><path id="c" d="M50 50 m-38 0 a38 38 0 1 1 76 0 a38 38 0 1 1 -76 0" /></defs>
-          <text className="fill-paper" style={{ fontFamily: "var(--font-mono)", fontSize: 8.4, letterSpacing: 2.2 }}>
+          <text className="fill-paper" style={{ fontFamily: "var(--font-mono)", fontSize: 8.4, letterSpacing: 1.6 }}>
             <textPath href="#c">PREPARAÇÃO MENTAL · FOCO · TRAJETÓRIA ·</textPath>
           </text>
         </svg>
