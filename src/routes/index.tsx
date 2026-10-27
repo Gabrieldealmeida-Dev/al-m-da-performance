@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, type CSSProperties } from "react";
 import { Nav } from "@/components/site/Nav";
 import { Reveal, Lines } from "@/components/site/Reveal";
-import { Cta, SectionTag, Todo } from "@/components/site/ui";
+import { Cta, SectionTag } from "@/components/site/ui";
 import hero from "@/assets/hero-athlete.jpg";
 import portrait from "@/assets/portrait.jpg";
 import team from "@/assets/team.jpg";
@@ -11,8 +11,8 @@ import corporate from "@/assets/corporate.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Psicologia Esportiva e Desenvolvimento Humano | [Nome da Psicóloga]" },
-      { name: "description", content: "Psicologia, preparação mental e desenvolvimento humano para atletas, equipes e empresas." },
+      { title: "Renata de Almeida Ramos — Psicóloga Clínica, Esportiva e Empresarial" },
+      { name: "description", content: "Renata de Almeida Ramos, psicóloga clínica, esportiva e empresarial em Guarujá e Baixada Santista. CRP 04/39275." },
       { property: "og:title", content: "A performance vai além do que se vê." },
       { property: "og:description", content: "Psicologia, preparação mental e desenvolvimento humano para os desafios do esporte e da vida profissional." },
       { property: "og:type", content: "website" },
@@ -50,6 +50,7 @@ function Index() {
       <Hero />
       <Marquee />
       <About />
+      <Clinic />
       <Sport />
       <Teams />
       <Companies />
@@ -102,7 +103,7 @@ function Hero() {
       <div className="relative mx-auto flex min-h-[100svh] max-w-[1440px] flex-col justify-end px-5 pb-8 pt-32 md:px-10 md:pb-10">
         <Reveal threshold={0} className="eyebrow mb-6 flex items-center gap-3 text-paper/70">
           <span className="fade-up flex items-center gap-3" style={d(100)}>
-            <span className="h-2 w-2 rounded-full bg-emerald" /> Edição 01 — Mente em movimento
+            <span className="h-2 w-2 rounded-full bg-emerald" /> Renata de Almeida Ramos — Psicóloga
           </span>
         </Reveal>
 
@@ -127,9 +128,9 @@ function Hero() {
             <Cta href="#contato" variant="ghost-light">Entrar em contato</Cta>
           </div>
           <ul className="fade-up eyebrow hidden space-y-1.5 text-right text-paper/60 md:col-span-3 md:block" style={d(940)}>
-            <li><a href="#esporte" className="hover:text-emerald-glow">01 — Atletas</a></li>
-            <li><a href="#equipes" className="hover:text-emerald-glow">02 — Equipes</a></li>
-            <li><a href="#empresas" className="hover:text-emerald-glow">03 — Empresas</a></li>
+            <li><a href="#clinica" className="hover:text-emerald-glow">01 — Clínica</a></li>
+            <li><a href="#esporte" className="hover:text-emerald-glow">02 — Esportiva</a></li>
+            <li><a href="#empresas" className="hover:text-emerald-glow">03 — Empresarial</a></li>
           </ul>
         </Reveal>
       </div>
@@ -171,41 +172,50 @@ function About() {
     <section id="sobre" className="relative mx-auto max-w-[1440px] px-5 pb-24 pt-28 md:px-10 md:pb-36 md:pt-40">
       <Reveal className="grid gap-12 md:grid-cols-12 md:gap-8">
         <div className="md:col-span-5 md:col-start-1">
-          <SectionTag n="01">Apresentação</SectionTag>
+          <SectionTag n="01">Quem sou</SectionTag>
           <div className="relative mt-10">
             <div className="reveal-photo aspect-[4/5] overflow-hidden" style={d(150)}>
-              <img src={portrait} alt="Retrato da psicóloga" width={1024} height={1280} loading="lazy" className="h-full w-full object-cover grayscale transition-[filter] duration-700 hover:grayscale-0" />
+              <img src={portrait} alt="Retrato de Renata de Almeida Ramos" width={1024} height={1280} loading="lazy" className="h-full w-full object-cover grayscale transition-[filter] duration-700 hover:grayscale-0" />
             </div>
             <div className="absolute -bottom-6 -right-4 bg-ink px-5 py-4 text-paper md:-right-10">
-              <p className="eyebrow text-paper/60">Registro</p>
-              <p className="mt-1 font-semibold">CRP <Todo>00/00000</Todo></p>
+              <p className="eyebrow text-paper/60">Registro profissional</p>
+              <p className="mt-1 font-semibold">CRP 04/39275</p>
+              <p className="text-sm text-paper/70">06/001349-IS</p>
             </div>
-            <span className="eyebrow absolute -left-2 top-0 origin-top-left -rotate-90 -translate-x-full text-muted-foreground">fig. 01 — retrato</span>
+            <span className="eyebrow absolute -left-2 top-0 origin-top-left -rotate-90 -translate-x-full text-muted-foreground">fig. 01 — Renata de Almeida Ramos</span>
           </div>
         </div>
 
-        <div className="md:col-span-6 md:col-start-7 md:pt-24">
+        <div className="md:col-span-6 md:col-start-7 md:pt-16">
           <h2 className="display text-6xl md:text-8xl">
-            <Lines lines={["Mente,", "corpo", <span className="serif-italic text-emerald">e contexto.</span>]} />
+            <Lines lines={["Potencial", <>em <span className="serif-italic text-emerald">desenvolvimento.</span></>]} />
           </h2>
           <p className="fade-up mt-10 font-serif text-2xl leading-snug md:text-3xl" style={d(300)}>
-            <Todo>Visão de trabalho em 2–3 frases, escrita pela profissional.</Todo>
+            “Meu propósito é utilizar a psicologia para transformar potencial em desenvolvimento, desafios em aprendizado e
+            conhecimento em mudanças reais.”
           </p>
-          <p className="fade-up mt-6 max-w-lg leading-relaxed text-muted-foreground" style={d(400)}>
-            Um espaço para contar a trajetória com as próprias palavras: como chegou à psicologia do esporte, o que a move e
-            como integra o cuidado clínico ao desenvolvimento de pessoas e organizações.
-          </p>
+          <div className="fade-up mt-8 max-w-xl space-y-4 leading-relaxed text-muted-foreground" style={d(400)}>
+            <p>
+              Sou Renata de Almeida Ramos, psicóloga com uma atuação que integra três grandes áreas: clínica, esportiva e
+              empresarial. Acredito que compreender o comportamento humano é fundamental para desenvolver pessoas,
+              fortalecer relações, superar desafios e alcançar resultados sustentáveis.
+            </p>
+            <p>
+              Atuo com crianças, adolescentes e adultos, atletas de alto rendimento, líderes, empresários e equipes
+              organizacionais — unindo conhecimento técnico, escuta humanizada e intervenções práticas.
+            </p>
+          </div>
 
-          <dl className="fade-up mt-12 grid grid-cols-1 border-t border-ink/15 sm:grid-cols-2" style={d(500)}>
+          <dl className="fade-up mt-12 grid grid-cols-2 border-t border-ink/15" style={d(500)}>
             {[
-              ["Formação", "Graduação · instituição · ano"],
-              ["Especialização", "Área · instituição"],
-              ["Atuação", "Modalidades / contextos"],
-              ["Atendimento", "Presencial · online · cidade"],
+              ["+15", "anos de experiência"],
+              ["+27 mil", "atendimentos realizados"],
+              ["3", "áreas integradas: clínica, esportiva e empresarial"],
+              ["Guarujá", "SP · Baixada Santista"],
             ].map(([k, v]) => (
-              <div key={k} className="border-b border-ink/15 py-5 sm:odd:pr-6 sm:even:border-l sm:even:pl-6">
-                <dt className="eyebrow text-emerald">{k}</dt>
-                <dd className="mt-2"><Todo>{v}</Todo></dd>
+              <div key={v} className="border-b border-ink/15 py-6 odd:pr-4 even:border-l even:pl-4 md:odd:pr-6 md:even:pl-6">
+                <dt className="display text-5xl text-ink md:text-6xl">{k}</dt>
+                <dd className="mt-2 text-sm text-muted-foreground">{v}</dd>
               </div>
             ))}
           </dl>
@@ -215,12 +225,50 @@ function About() {
   );
 }
 
+/* ───────────────────────── CLÍNICA ───────────────────────── */
+const clinic = [
+  "Ansiedade, estresse e dificuldades emocionais",
+  "Autoestima e autoconfiança",
+  "Relacionamentos e conflitos familiares",
+  "Desenvolvimento pessoal e autoconhecimento",
+  "Crianças, adolescentes e adultos",
+  "Mudanças e transições de vida",
+];
+
+function Clinic() {
+  return (
+    <section id="clinica" className="relative bg-paper-deep py-24 md:py-32">
+      <div className="mx-auto max-w-[1440px] px-5 md:px-10">
+        <Reveal className="grid gap-12 md:grid-cols-12">
+          <div className="md:col-span-5">
+            <SectionTag n="02">Psicologia clínica</SectionTag>
+            <h2 className="display mt-8 text-6xl md:text-[6vw]">
+              <Lines lines={["Cuidar", <>de <span className="serif-italic text-emerald">dentro</span></>, "para fora."]} />
+            </h2>
+            <p className="fade-up mt-8 max-w-md leading-relaxed text-muted-foreground" style={d(300)}>
+              Atendimento psicológico individualizado, com foco na saúde emocional, qualidade de vida e autoconhecimento.
+            </p>
+          </div>
+          <ul className="grid self-end sm:grid-cols-2 md:col-span-6 md:col-start-7">
+            {clinic.map((c, i) => (
+              <li key={c} className="fade-up group flex gap-4 border-t border-ink/15 py-5 pr-4" style={d(i * 70)}>
+                <span className="font-mono text-xs text-emerald">{String(i + 1).padStart(2, "0")}</span>
+                <span className="text-lg leading-snug transition-transform duration-500 group-hover:translate-x-2">{c}</span>
+              </li>
+            ))}
+          </ul>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 /* ───────────────────────── ESPORTE ───────────────────────── */
 const sport = [
-  ["Concentração", "Treinar a atenção para o que importa no momento da execução, em treinos e competições."],
-  ["Confiança", "Construir uma relação mais estável com o próprio desempenho, independente do placar."],
-  ["Manejo da pressão", "Compreender e regular as respostas ao estresse competitivo, à expectativa e ao erro."],
-  ["Desenvolvimento do atleta", "Acompanhar a carreira em suas transições: base, profissionalização, lesões e pós-carreira."],
+  ["Preparação para competições", "Preparação psicológica para o momento da prova, construída ao longo da rotina de treinos."],
+  ["Ansiedade e pressão", "Controle da ansiedade e da pressão competitiva, com recursos para atuar sob expectativa."],
+  ["Foco e autoconfiança", "Concentração, foco e autoconfiança para sustentar o desempenho."],
+  ["Derrotas e frustrações", "Gestão emocional diante de derrotas e frustrações, com motivação e fortalecimento psicológico."],
 ];
 
 function Sport() {
@@ -232,18 +280,23 @@ function Sport() {
       <div className="relative mx-auto max-w-[1440px] px-5 md:px-10">
         <Reveal className="grid gap-10 md:grid-cols-12">
           <div className="md:col-span-7">
-            <SectionTag n="02" light>Psicologia esportiva</SectionTag>
+            <SectionTag n="03" light>Psicologia esportiva</SectionTag>
             <h2 className="display mt-8 text-[17vw] md:text-[8.5vw]">
               <Lines lines={["O jogo", <>também se <span className="serif-italic text-emerald-glow">treina</span></>, "por dentro."]} />
             </h2>
           </div>
-          <p className="fade-up self-end leading-relaxed text-paper/70 md:col-span-4 md:col-start-9" style={d(300)}>
-            Preparação psicológica para atletas de diferentes modalidades e níveis. Os temas abaixo são pontos de partida —
-            ajuste-os aos serviços efetivamente oferecidos.
-          </p>
+          <div className="fade-up self-end md:col-span-4 md:col-start-9" style={d(300)}>
+            <p className="leading-relaxed text-paper/70">
+              Preparação e acompanhamento psicológico de atletas e equipes esportivas, desenvolvendo recursos emocionais
+              que favoreçam o desempenho e o bem-estar.
+            </p>
+            <div className="mt-6 border-l-2 border-ember pl-4">
+              <p className="eyebrow text-ember">Experiência em destaque</p>
+              <p className="mt-2 font-serif text-xl leading-snug">Seleção Brasileira Paralímpica de Levantamento de Peso</p>
+            </div>
+          </div>
         </Reveal>
 
-        {/* Rows expand on hover/focus: number lights up, description slides in */}
         <ul className="mt-16 border-t border-paper/15 md:mt-24">
           {sport.map(([t, desc], i) => (
             <Reveal as="li" key={t} className="border-b border-paper/15">
@@ -251,7 +304,7 @@ function Sport() {
                 <span className="col-span-2 font-mono text-sm text-paper/40 transition-colors group-hover:text-emerald-glow group-focus:text-emerald-glow md:col-span-1">
                   /{String(i + 1).padStart(2, "0")}
                 </span>
-                <h3 className="display col-span-10 text-4xl transition-transform duration-500 group-hover:translate-x-4 md:col-span-6 md:text-7xl">
+                <h3 className="display col-span-10 text-4xl transition-transform duration-500 group-hover:translate-x-4 md:col-span-7 md:text-7xl">
                   <span className="fade-up inline-block" style={d(i * 80)}>{t}</span>
                 </h3>
                 <p className="col-span-12 text-paper/70 md:col-span-4 md:col-start-9 md:translate-y-2 md:opacity-40 md:transition-all md:duration-500 md:group-hover:translate-y-0 md:group-hover:opacity-100 md:group-focus:opacity-100">
@@ -279,18 +332,18 @@ function Teams() {
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-ink/70" />
         <div className="relative mx-auto flex h-full max-w-[1440px] flex-col justify-between px-5 py-16 md:px-10 md:py-24">
-          <SectionTag n="03" light>Desenvolvimento de equipes</SectionTag>
+          <SectionTag n="04" light>Equipes e comissões</SectionTag>
           <div className="grid gap-10 md:grid-cols-12 md:items-end">
             <h2 className="display text-[15vw] md:col-span-8 md:text-[7.5vw]">
               <Lines lines={["Ninguém", <>vence <span className="serif-italic text-emerald-glow">sozinho.</span></>]} />
             </h2>
             <div className="fade-up space-y-4 md:col-span-4" style={d(300)}>
-              {["Atletas e elencos", "Comissões técnicas e treinadores", "Clubes e organizações esportivas"].map((x) => (
+              {["Atletas de base e alto rendimento", "Técnicos e comissões esportivas", "Orientação a familiares"].map((x) => (
                 <div key={x} className="flex items-center justify-between border-b border-paper/25 pb-3 text-lg">
                   {x} <span className="h-1.5 w-1.5 rounded-full bg-emerald-glow" />
                 </div>
               ))}
-              <p className="pt-2 text-sm text-paper/70">Comunicação, coesão, liderança e clima de grupo. <Todo>confirmar escopo</Todo></p>
+              <p className="pt-2 text-sm text-paper/70">O desempenho é construído em rede: atleta, família e comissão técnica.</p>
             </div>
           </div>
         </div>
@@ -301,9 +354,18 @@ function Teams() {
 
 /* ───────────────────────── EMPRESAS ───────────────────────── */
 const corp = [
-  { k: "Capacitações", f: "Formato contínuo", t: "Programas para lideranças e times sobre comunicação, gestão emocional e tomada de decisão sob pressão." },
-  { k: "Palestras", f: "Evento · 60–90 min", t: "Conteúdos que traduzem aprendizados do esporte para o contexto profissional, com rigor e linguagem acessível." },
-  { k: "Treinamentos", f: "Workshop · imersão", t: "Encontros práticos e aplicados, desenhados a partir das necessidades reais de cada organização." },
+  {
+    k: "Organizacional", f: "Projetos personalizados",
+    items: ["Desenvolvimento e capacitação de líderes", "Gestão de pessoas e engajamento", "Comunicação assertiva e conflitos", "Diagnóstico e cultura organizacional", "Prevenção do absenteísmo", "Processos de mudança"],
+  },
+  {
+    k: "Saúde no trabalho", f: "Psicologia ocupacional",
+    items: ["Avaliações psicológicas e psicossociais", "Análise de riscos psicossociais", "Adequação à NR-01 (riscos psicossociais)", "Prevenção de estresse e burnout", "Programas de bem-estar", "Diagnósticos e intervenções"],
+  },
+  {
+    k: "Palestras", f: "Workshops · treinamentos",
+    items: ["Liderança e equipes", "Inteligência emocional", "Ansiedade e saúde mental", "Comunicação e relações", "Motivação e performance", "Gestão de conflitos"],
+  },
 ];
 
 function Companies() {
@@ -312,21 +374,24 @@ function Companies() {
       <div className="mx-auto max-w-[1440px] px-5 md:px-10">
         <Reveal className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-6">
-            <SectionTag n="04">Serviços para empresas</SectionTag>
+            <SectionTag n="05">Psicologia empresarial</SectionTag>
             <h2 className="display mt-8 text-6xl md:text-[6.5vw]">
               <Lines lines={["Do campo", <>para a <span className="serif-italic text-emerald">sala</span></>, "de reunião."]} />
             </h2>
+            <p className="fade-up mt-8 max-w-md leading-relaxed text-muted-foreground" style={d(300)}>
+              Assim como no esporte, o desempenho profissional não depende apenas de conhecimento técnico. Envolve
+              equilíbrio emocional, preparação, disciplina, confiança, comunicação e capacidade de adaptação.
+            </p>
           </div>
           <div className="relative md:col-span-5 md:col-start-8">
             <div className="reveal-photo aspect-[4/3] overflow-hidden" style={d(150)}>
-              <img src={corporate} alt="Capacitação com equipe corporativa" width={1408} height={1008} loading="lazy" className="h-full w-full object-cover" />
+              <img src={corporate} alt="Treinamento com equipe corporativa" width={1408} height={1008} loading="lazy" className="h-full w-full object-cover" />
             </div>
             <span className="absolute -left-3 -top-3 h-6 w-6 border-l-2 border-t-2 border-ember" />
             <span className="absolute -bottom-3 -right-3 h-6 w-6 border-b-2 border-r-2 border-ember" />
           </div>
         </Reveal>
 
-        {/* Service cards: ink fill rises on hover, offset grid on desktop */}
         <div className="mt-16 grid gap-px bg-ink/15 md:mt-24 md:grid-cols-3">
           {corp.map((c, i) => (
             <Reveal key={c.k} className={i === 1 ? "md:translate-y-12" : ""}>
@@ -337,8 +402,12 @@ function Companies() {
                     <span className="font-mono text-sm text-emerald">0{i + 1}</span>
                     <span className="eyebrow rounded-full border border-current/30 px-3 py-1 opacity-60">{c.f}</span>
                   </div>
-                  <h3 className="display mt-16 text-5xl md:text-6xl">{c.k}</h3>
-                  <p className="mt-4 leading-relaxed opacity-75">{c.t}</p>
+                  <h3 className="display mt-12 text-5xl">{c.k}</h3>
+                  <ul className="mt-6 space-y-2 text-sm opacity-80">
+                    {c.items.map((x) => (
+                      <li key={x} className="flex gap-3"><span className="mt-2 h-px w-3 shrink-0 bg-current" />{x}</li>
+                    ))}
+                  </ul>
                   <a href="#contato" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold">
                     <span className="sweep">Solicitar proposta</span> →
                   </a>
@@ -347,6 +416,10 @@ function Companies() {
             </Reveal>
           ))}
         </div>
+        <p className="mt-20 max-w-2xl text-sm text-muted-foreground md:mt-24">
+          As atividades são personalizadas de acordo com o público e os objetivos de cada organização, podendo incluir
+          dinâmicas, experiências práticas e metodologias participativas.
+        </p>
       </div>
     </section>
   );
@@ -354,10 +427,10 @@ function Companies() {
 
 /* ───────────────────────── ABORDAGEM ───────────────────────── */
 const steps = [
-  ["Compreensão", "do contexto", "Escuta do atleta, da equipe ou da organização: história, ambiente e momento."],
-  ["Identificação", "de necessidades", "Mapeamento conjunto do que precisa ser desenvolvido e por quê."],
-  ["Planejamento", "da intervenção", "Definição de objetivos, formato, frequência e responsabilidades."],
-  ["Acompanhamento", "contínuo", "Revisão periódica do processo e ajustes ao longo da trajetória."],
+  ["Escuta", "humanizada", "Compreensão da história, do contexto e dos objetivos de cada pessoa ou organização."],
+  ["Diagnóstico", "das necessidades", "Identificação do que precisa ser desenvolvido, cuidado ou ajustado."],
+  ["Intervenção", "prática", "Ações planejadas com conhecimento técnico, respeitando a individualidade."],
+  ["Acompanhamento", "contínuo", "Revisão do processo para que o aprendizado se torne mudança real."],
 ];
 
 function Approach() {
@@ -366,25 +439,24 @@ function Approach() {
       <div className="mx-auto max-w-[1440px] px-5 md:px-10">
         <Reveal className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
           <div>
-            <SectionTag n="05">Abordagem de trabalho</SectionTag>
+            <SectionTag n="06">Abordagem</SectionTag>
             <h2 className="display mt-8 text-6xl md:text-8xl">
               <Lines lines={["Um processo,", <span className="serif-italic text-emerald">não um atalho.</span>]} />
             </h2>
           </div>
           <p className="fade-up max-w-sm text-muted-foreground" style={d(300)}>
-            Etapas adaptáveis à metodologia da profissional e às demandas de cada contexto.
+            A experiência em ambientes clínicos, esportivos e corporativos permite uma compreensão ampliada do comportamento humano.
           </p>
         </Reveal>
 
         <Reveal className="relative mt-20">
-          {/* Trajectory connects steps on desktop */}
           <svg className="trajectory absolute -top-6 left-0 hidden h-24 w-full md:block" viewBox="0 0 1200 100" preserveAspectRatio="none" fill="none">
             <path d="M0 90 C 200 90, 250 70, 400 60 S 700 40, 800 30 S 1050 10, 1200 5" stroke="var(--ember)" strokeWidth="1.5" strokeDasharray="4 6" vectorEffect="non-scaling-stroke" />
           </svg>
           <ol className="grid gap-0 md:grid-cols-4">
             {steps.map(([a, b, t], i) => (
-              <li key={a} className="fade-up group relative border-l border-ink/20 py-6 pl-6 md:pt-24" style={{ ...d(i * 150), marginTop: `calc(${(3 - i)} * 0px)` }}>
-                <span className="absolute -left-[7px] top-8 h-3 w-3 rounded-full border-2 border-ink bg-paper-deep transition-colors group-hover:bg-emerald md:top-[calc(6rem-6px)]" style={{ transform: `translateY(${-i * 0}px)` }} />
+              <li key={a} className="fade-up group relative border-l border-ink/20 py-6 pl-6 md:pt-24" style={d(i * 150)}>
+                <span className="absolute -left-[7px] top-8 h-3 w-3 rounded-full border-2 border-ink bg-paper-deep transition-colors group-hover:bg-emerald md:top-[calc(6rem-6px)]" />
                 <span className="display text-8xl text-ink/10 transition-colors duration-500 group-hover:text-emerald md:text-9xl">{i + 1}</span>
                 <h3 className="mt-2 text-xl font-semibold">{a}</h3>
                 <p className="serif-italic text-xl text-muted-foreground">{b}</p>
@@ -403,14 +475,14 @@ function Contact() {
   return (
     <section id="contato" className="grain relative overflow-hidden bg-emerald text-paper">
       <div className="relative mx-auto max-w-[1440px] px-5 py-24 md:px-10 md:py-36">
-        <SectionTag n="06" light>Contato</SectionTag>
-        <Reveal as="h2" className="display mt-10 text-[22vw] md:text-[13vw]">
-          <Lines lines={["Vamos", <span className="serif-italic">conversar?</span>]} />
+        <SectionTag n="07" light>Contato</SectionTag>
+        <Reveal as="h2" className="display mt-10 text-[16vw] md:text-[10vw]">
+          <Lines lines={["Vamos construir", <span className="serif-italic">novas possibilidades?</span>]} />
         </Reveal>
         <Reveal className="mt-12 grid gap-10 border-t border-paper/25 pt-10 md:grid-cols-12">
           <p className="fade-up text-lg leading-relaxed md:col-span-5" style={d(200)}>
-            Para atletas, equipes, clubes ou empresas: conte um pouco sobre o seu contexto e retornarei para entender como
-            posso contribuir.
+            Seja para cuidar da sua saúde emocional, fortalecer sua performance esportiva ou desenvolver sua organização,
+            a psicologia pode ser uma importante aliada nessa jornada.
           </p>
           <div className="fade-up flex flex-wrap gap-3 md:col-span-6 md:col-start-7 md:justify-end" style={d(320)}>
             <Cta href="mailto:contato@exemplo.com" variant="solid">Enviar e-mail</Cta>
@@ -428,13 +500,14 @@ function Footer() {
     <footer className="bg-ink text-paper">
       <div className="mx-auto grid max-w-[1440px] gap-12 px-5 py-16 md:grid-cols-12 md:px-10">
         <div className="md:col-span-5">
-          <p className="display text-5xl">[Nome da<br />Psicóloga]</p>
-          <p className="eyebrow mt-4 text-paper/60">Psicóloga · CRP [00/00000]</p>
+          <p className="display text-5xl">Renata de<br />Almeida Ramos</p>
+          <p className="mt-4 text-paper/70">Psicóloga Clínica, Esportiva e Empresarial</p>
+          <p className="eyebrow mt-2 text-paper/50">CRP 04/39275 · 06/001349-IS</p>
         </div>
         <div className="md:col-span-3">
           <p className="eyebrow text-emerald-glow">Contato</p>
           <ul className="mt-4 space-y-2 text-paper/80">
-            <li>[e-mail]</li><li>[telefone]</li><li>[cidade / atendimento online]</li>
+            <li>[e-mail]</li><li>[telefone / WhatsApp]</li><li>Guarujá – SP · Baixada Santista</li>
           </ul>
         </div>
         <div className="md:col-span-2">
@@ -451,7 +524,7 @@ function Footer() {
         </div>
       </div>
       <div className="mx-auto flex max-w-[1440px] flex-col justify-between gap-2 border-t border-paper/10 px-5 py-6 text-xs text-paper/50 md:flex-row md:px-10">
-        <span>© {new Date().getFullYear()} — Todos os direitos reservados.</span>
+        <span>© {new Date().getFullYear()} Renata de Almeida Ramos — Todos os direitos reservados.</span>
         <span>Este site não oferece atendimento de emergência. Em caso de crise, ligue 188 (CVV).</span>
       </div>
     </footer>
