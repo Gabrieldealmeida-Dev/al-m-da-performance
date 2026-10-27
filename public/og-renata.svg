@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">Renata de Almeida Ramos | Psicóloga no Guarujá</title>
+  <desc id="description">Psicologia clínica, esportiva e empresarial. Desenvolvimento humano e saúde mental no trabalho.</desc>
+  <rect width="1200" height="630" fill="#06101C"/>
+  <rect x="48" y="52" width="4" height="526" fill="#A88848"/>
+  <rect x="78" y="65" width="500" height="500" fill="#FFFFFF"/>
+  <image href="/logo-renata-simbolo.png" x="78" y="65" width="500" height="500" preserveAspectRatio="xMidYMid meet"/>
+  <path d="M638 126h48" stroke="#E4D09D" stroke-width="2"/>
+  <text x="638" y="190" fill="#E4D09D" font-family="Big Shoulders Display, Archivo, Arial, sans-serif" font-size="25" font-weight="700" letter-spacing="3">PSICOLOGIA · GUARUJÁ</text>
+  <text x="638" y="286" fill="#F5F1E9" font-family="Big Shoulders Display, Archivo, Arial, sans-serif" font-size="60" font-weight="800">RENATA DE ALMEIDA</text>
+  <text x="638" y="354" fill="#F5F1E9" font-family="Big Shoulders Display, Archivo, Arial, sans-serif" font-size="60" font-weight="800">RAMOS</text>
+  <text x="638" y="424" fill="#E4D09D" font-family="Instrument Serif, Georgia, serif" font-size="36" font-style="italic">Clínica · Esportiva · Empresarial</text>
+  <text x="638" y="486" fill="#D5D7D9" font-family="Archivo, Arial, sans-serif" font-size="22">Preparação mental e desenvolvimento humano</text>
+  <text x="638" y="526" fill="#D5D7D9" font-family="Archivo, Arial, sans-serif" font-size="22">Guarujá · Baixada Santista · SP</text>
+</svg>

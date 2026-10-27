@@ -39,6 +39,9 @@
   --color-emerald: var(--emerald);
   --color-emerald-glow: var(--emerald-glow);
   --color-ember: var(--ember);
+  --color-brand-gold: var(--brand-gold);
+  --color-brand-gold-light: var(--brand-gold-light);
+  --color-brand-gold-deep: var(--brand-gold-deep);
 }
 
 :root {
@@ -50,6 +53,9 @@
   --emerald: oklch(0.52 0.12 162);
   --emerald-glow: oklch(0.72 0.15 160);
   --ember: oklch(0.6 0.17 40);
+  --brand-gold: #a88848;
+  --brand-gold-light: #e4d09d;
+  --brand-gold-deep: #705522;
 
   --background: var(--paper);
   --foreground: var(--ink);
@@ -74,7 +80,7 @@
 
 @layer base {
   * { border-color: var(--color-border); }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
@@ -158,9 +164,6 @@
 .trajectory path { stroke-dasharray: 1400; stroke-dashoffset: 1400; }
 .is-in .trajectory path, .trajectory.is-in path { animation: draw 2.6s cubic-bezier(0.6,0,0.2,1) forwards; animation-delay: .4s; }
 
-@keyframes spin-slow { to { transform: rotate(360deg); } }
-.spin-slow { animation: spin-slow 24s linear infinite; }
-
 @keyframes pulse-dot { 0%,100% { opacity: 1; } 50% { opacity: .25; } }
 .pulse-dot { animation: pulse-dot 1.8s ease-in-out infinite; }
 
@@ -168,8 +171,20 @@
 .sweep { background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size .5s cubic-bezier(0.2,0.8,0.1,1); }
 .sweep:hover { background-size: 100% 1px; }
 
+.reveal-photo.is-center img { filter: grayscale(0); }
+
+@media (hover: none) and (pointer: coarse) {
+  .approach-step.is-center .approach-step-number { color: var(--emerald); }
+  #empresas article.is-active { background-color: var(--ink); }
+  #empresas article.is-active > div { color: var(--paper); }
+  #empresas article.is-active .font-mono { color: var(--brand-gold-light); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal-line > span, .reveal-photo, .reveal-photo img, .fade-up { transition: none !important; transform: none !important; clip-path: none !important; opacity: 1 !important; }
-  .marquee-track, .spin-slow, .pulse-dot { animation: none; }
+  #empresas article, #empresas article > div { transition: none !important; }
+  .approach-step-number { transition: none !important; }
+  #top img, #top h1 { translate: none !important; scale: none !important; }
+  .marquee-track, .pulse-dot { animation: none; }
   .trajectory path { stroke-dashoffset: 0; animation: none !important; }
 }

@@ -7,12 +7,16 @@ export function Reveal({
   children,
   style,
   threshold = 0.2,
+  centerActive = false,
+  centerActiveOnDesktop = false,
 }: {
   as?: ElementType;
   className?: string;
   children: ReactNode;
   style?: CSSProperties;
   threshold?: number;
+  centerActive?: boolean;
+  centerActiveOnDesktop?: boolean;
 }) {
   const ref = useRef<HTMLElement>(null);
   useEffect(() => {
@@ -28,8 +32,38 @@ export function Reveal({
       { threshold },
     );
     io.observe(el);
-    return () => io.disconnect();
-  }, [threshold]);
+
+    const centerMedia = window.matchMedia("(hover: none) and (pointer: coarse)");
+    let centerObserver: IntersectionObserver | undefined;
+    const observeCenter = () => {
+      centerObserver?.disconnect();
+      if (!centerActive || (!centerActiveOnDesktop && !centerMedia.matches)) {
+        el.classList.remove("is-center");
+        return;
+      }
+      const inset = Math.round(window.innerHeight * 0.38);
+      centerObserver = new IntersectionObserver(
+        ([entry]) => el.classList.toggle("is-center", Boolean(entry?.isIntersecting)),
+        { rootMargin: `-${inset}px 0px -${inset}px 0px` },
+      );
+      centerObserver.observe(el);
+    };
+
+    if (centerActive) {
+      observeCenter();
+      centerMedia.addEventListener("change", observeCenter);
+      window.addEventListener("resize", observeCenter, { passive: true });
+    }
+
+    return () => {
+      io.disconnect();
+      centerObserver?.disconnect();
+      if (centerActive) {
+        centerMedia.removeEventListener("change", observeCenter);
+        window.removeEventListener("resize", observeCenter);
+      }
+    };
+  }, [threshold, centerActive, centerActiveOnDesktop]);
   return (
     <Tag ref={ref} className={className} style={style}>
       {children}
