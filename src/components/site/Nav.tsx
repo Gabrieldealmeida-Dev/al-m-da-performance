@@ -3,8 +3,9 @@ import { Menu, X } from "lucide-react";
 
 const links = [
   { href: "#sobre", label: "Sobre" },
+  { href: "#clinica", label: "Clínica" },
   { href: "#esporte", label: "Esporte" },
-  { href: "#equipes", label: "Equipes" },
+  
   { href: "#empresas", label: "Empresas" },
   { href: "#abordagem", label: "Abordagem" },
 ];
@@ -27,10 +28,10 @@ export function Nav() {
         }`}
       >
         <a href="#top" className="flex items-center gap-3" aria-label="Início">
-          <span className="display grid h-9 w-9 place-items-center rounded-full bg-emerald text-lg text-paper">N</span>
+          <span className="display grid h-9 w-9 place-items-center rounded-full bg-emerald text-lg text-paper">R</span>
           <span className="hidden leading-tight sm:block">
-            <span className="block text-sm font-semibold">[Nome da Psicóloga]</span>
-            <span className="eyebrow block text-[0.6rem] text-paper/60">Psicologia · Esporte · Pessoas</span>
+            <span className="block text-sm font-semibold">Renata de Almeida Ramos</span>
+            <span className="eyebrow block text-[0.6rem] text-paper/60">Clínica · Esportiva · Empresarial</span>
           </span>
         </a>
         <ul className="hidden items-center gap-7 text-sm lg:flex">
@@ -75,7 +76,7 @@ export function Nav() {
             </li>
           ))}
         </ul>
-        <p className="eyebrow text-paper/50">[CRP 00/00000]</p>
+        <p className="eyebrow text-paper/50">CRP 04/39275 · 06/001349-IS</p>
       </div>
     </header>
   );
